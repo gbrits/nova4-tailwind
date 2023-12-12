@@ -10,7 +10,7 @@ This [Laravel Nova](https://nova.laravel.com) package loads the full Tailwind CS
 Install the package in a Laravel Nova project via Composer:
 
 ```bash
-composer require optimistdigital/nova-tailwind
+composer require gbrits/nova4-tailwind
 ```
 
 ## Usage
