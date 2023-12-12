@@ -16,11 +16,10 @@ class TailwindServiceProvider extends ServiceProvider
             Nova::theme('/vendor/nova-tailwind/tailwind.css');
         } else {
             Nova::serving(function (ServingNova $event) {
-                Nova::style('nova-tailwind', __DIR__ . '/../dist/tailwind.css');
+                Nova::style('nova-tailwind', __DIR__ . '/../dist/tailwind-supplement.css');
             });
         }
 
-        // Publish CSS for login screen
-        $this->publishes([__DIR__ . '/../dist' => $tailwindPublicPath], 'tailwind-public-css');
+        // $this->publishes([__DIR__ . '/../dist' => $tailwindPublicPath], 'tailwind-public-css');
     }
 }

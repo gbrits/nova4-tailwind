@@ -1,0 +1,246 @@
+<div v-if="modalPrompt" class="relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+    
+    <!-- Background backdrop -->
+    <div 
+      class="fixed inset-0 bg-gray-500 bg-opacity-75"
+      :class="{
+        'ease-out duration-300 opacity-100': modalPrompt,
+        'ease-in duration-200 opacity-0': !modalPrompt,
+      }"
+    ></div>
+    
+    <!-- Modal panel -->
+    <div class="fixed inset-0 z-10 w-screen overflow-y-auto">
+      <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
+        <div 
+          :class="{
+            'ease-out duration-300 opacity-100 translate-y-0 sm:scale-100': modalPrompt,
+            'ease-in duration-200 opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95': !modalPrompt,
+          }"
+        >
+        <div class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
+          <div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
+            <div class="sm:flex sm:items-start">
+              <div class="mx-auto flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-red-100 sm:mx-0 sm:h-10 sm:w-10">
+                <svg class="h-6 w-6 text-red-600" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
+                </svg>
+              </div>
+              <div class="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left">
+                <h3 class="text-base font-semibold leading-6 text-gray-900" id="modal-title">Deactivate account</h3>
+                <div class="mt-2">
+                  <p class="text-sm text-gray-500">Are you sure you want to deactivate your account? All of your data will be permanently removed. This action cannot be undone.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
+            <button type="button" class="inline-flex w-full justify-center rounded-md bg-red-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-500 sm:ml-3 sm:w-auto">Deactivate</button>
+            <button @click="modalPrompt = false" type="button" class="mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button type="button" class="border inline-flex items-center justify-center appearance-none cursor-pointer rounded text-sm font-bold focus:outline-none focus:ring ring-primary-200 dark:ring-gray-600 relative disabled:cursor-not-allowed bg-transparent border-transparent text-gray-500 dark:text-gray-400 hover:enabled:text-primary-500 h-9 w-9 lg:hidden ml-1" aria-label="Toggle Sidebar" aria-expanded="false"><span class="flex items-center gap-1"><!----><span><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path></svg></span><!----></span><!----></button>
+
+  <div class="flex flex-col md:flex-row md:items-center justify-center md:justify-end space-y-2 md:space-y-0 md:space-x-3"><button type="button" class="border inline-flex items-center justify-center appearance-none cursor-pointer rounded text-sm font-bold focus:outline-none focus:ring ring-primary-200 dark:ring-gray-600 relative disabled:cursor-not-allowed bg-transparent border-transparent h-9 px-3 text-gray-600 dark:text-gray-400 hover:enabled:bg-gray-700/5 dark:hover:enabled:bg-gray-950" dusk="cancel-update-button"><span class="flex items-center gap-1"><!----><!---->Cancel<!----></span><!----></button><button type="button" class="border inline-flex items-center justify-center appearance-none cursor-pointer rounded text-sm font-bold focus:outline-none focus:ring ring-primary-200 dark:ring-gray-600 relative disabled:cursor-not-allowed shadow h-9 px-3 bg-primary-500 border-primary-500 hover:enabled:bg-primary-400 hover:enabled:border-primary-400 text-white dark:text-gray-900" dusk="update-and-continue-editing-button"><span class="flex items-center gap-1"><!----><!---->Update &amp; Continue Editing<!----></span><!----></button><button type="submit" class="border inline-flex items-center justify-center appearance-none cursor-pointer rounded text-sm font-bold focus:outline-none focus:ring ring-primary-200 dark:ring-gray-600 relative disabled:cursor-not-allowed shadow h-9 px-3 bg-primary-500 border-primary-500 hover:enabled:bg-primary-400 hover:enabled:border-primary-400 text-white dark:text-gray-900" dusk="update-button"><span class="flex items-center gap-1"><!----><!---->Update Project<!----></span><!----></button></div>
+  
+</div>
+
+<body class="font-sans antialiased">
+        
+
+    <div style="box-shadow: none !important; background-color: #f1f5f9">
+        
+
+        <!-- Page Heading -->
+        
+
+        <!-- Page Content -->
+        <main>
+            <div>
+    <div class="max-w-7xl mx-auto py-10 sm:px-6 lg:px-8">
+        <div wire:id="XYiIbU0wGfHyp1L5N5v4" class="md:grid md:grid-cols-3 md:gap-6">
+<div class="md:col-span-1 flex justify-between">
+<div class="px-4 sm:px-0">
+    <h3 class="text-lg font-medium text-gray-900">Team Info</h3>
+
+    <p class="mt-1 text-sm text-gray-600">
+        The team's name, type and owner information.
+    </p>
+</div>
+
+<div class="px-4 sm:px-0">
+    
+</div>
+</div>
+
+<div class="mt-5 md:mt-0 md:col-span-2">
+    <form wire:submit.prevent="updateTeamName">
+        <div class="px-4 py-5 bg-white sm:p-6 shadow sm:rounded-tl-md sm:rounded-tr-md">
+            <div class="grid grid-cols-6 gap-6">
+                <!-- Team Owner Information -->
+    <div class="col-span-6">
+        <label class="block font-medium text-sm text-gray-700">
+Team Owner
+</label>
+
+        <div class="flex items-center mt-2">
+            <img class="w-12 h-12 rounded-full object-cover" src="https://ui-avatars.com/api/?name=A+M&amp;color=7F9CF5&amp;background=EBF4FF">
+
+            <div class="ml-4 leading-tight">
+                <div></div>
+                <div class="text-gray-700 text-sm">com.au</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Team Name -->
+    <div class="col-span-6 sm:col-span-4">
+        <label class="block font-medium text-sm text-gray-700" for="name">
+Team Name
+</label>
+
+        <input class="border-gray-300 focus:border-orange-300 focus:ring focus:ring-orange-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full" id="name" type="text" wire:model.defer="state.name">
+
+                </div>
+
+    <!-- Account Type -->
+    <div class="col-span-6 sm:col-span-4">
+        <label class="block font-medium text-sm text-gray-700" for="account_type">
+Team Account Type
+</label>
+
+        <select id="account_type" class="border-gray-300 focus:border-orange-300 focus:ring focus:ring-orange-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full" wire:model.defer="state.account_type" :disabled="! Gate::check('update', $team)">
+            <option value="General">
+                General
+            </option>
+            <option value="Home Builder">
+                Home Builder
+            </option>
+            <option value="Construction">
+                Construction
+            </option>
+        </select>
+
+                </div>
+
+    <div class="col-span-6 sm:col-span-4">
+    <div class="text-md font-semibold"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="inline-block w-5 h-5">
+<path stroke-linecap="round" stroke-linejoin="round" d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.043-.025a15.994 15.994 0 011.622-3.395m3.42 3.42a15.995 15.995 0 004.764-4.648l3.876-5.814a1.151 1.151 0 00-1.597-1.597L14.146 6.32a15.996 15.996 0 00-4.649 4.763m3.42 3.42a6.776 6.776 0 00-3.42-3.42"></path>
+</svg>
+<span class="ml-1 inline-block text-gray-600">Team Colour Scheme</span></div>
+    </div>
+
+    <!-- Primary Color -->
+    <div class="col-span-6 sm:col-span-4">
+
+        <input class="border-gray-300 focus:border-orange-300 focus:ring focus:ring-orange-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 inline-block" id="primary_color" type="color" wire:model.defer="state.primary_color">
+<label class="text-sm inline-block relative -top-1 text-gray-600" for="primary_color">Primary Color</label>
+
+                </div>
+
+    
+
+    <!-- Background Color -->
+    <div class="col-span-6 sm:col-span-4">
+
+        <input class="border-gray-300 focus:border-orange-300 focus:ring focus:ring-orange-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 inline-block" id="background_color" type="color" wire:model.defer="state.background_color">
+<label class="text-sm inline-block relative -top-1 text-gray-600" for="background_color">Background Color</label>
+
+                </div>
+            </div>
+        </div>
+
+                        <div class="flex items-center justify-end px-4 py-3 bg-gray-50 text-right sm:px-6 shadow sm:rounded-bl-md sm:rounded-br-md">
+                <div x-data="{ shown: false, timeout: null }" x-init="window.livewire.find('XYiIbU0wGfHyp1L5N5v4').on('saved', () => { clearTimeout(timeout); shown = true; timeout = setTimeout(() => { shown = false }, 2000);  })" x-show.transition.out.opacity.duration.1500ms="shown" x-transition:leave.opacity.duration.1500ms="" style="display: none;" class="text-sm text-gray-600 mr-3">
+Saved.
+</div>
+
+        <button type="submit" class="inline-flex items-center px-4 py-2 font-bold bg-orange-500 border border-transparent rounded-md text-sm text-white   hover:bg-orange-400 active:bg-orange-400 focus:outline-none focus:border-orange-400 focus:ring focus:ring-orange-300 disabled:opacity-25 transition">
+Save
+</button>
+            </div>
+                </form>
+</div>
+</div>
+
+<!-- Livewire Component wire-end:XYiIbU0wGfHyp1L5N5v4 -->
+        <div class="hidden sm:block">
+<div class="py-8">
+    <div class="border-t border-gray-200"></div>
+</div>
+</div>
+
+        <div wire:id="UZg425soykKfsMaEsVeB" class="md:grid md:grid-cols-3 md:gap-6">
+<div class="md:col-span-1 flex justify-between">
+<div class="px-4 sm:px-0">
+    <h3 class="text-lg font-medium text-gray-900">Company Logo / Image</h3>
+
+    <p class="mt-1 text-sm text-gray-600">
+        Update your company imagery. This is used on the cover page of reporting documents.
+    </p>
+</div>
+
+<div class="px-4 sm:px-0">
+    
+</div>
+</div>
+
+<div class="mt-5 md:mt-0 md:col-span-2">
+    <form wire:submit.prevent="updateTeamProfileInformation">
+        <div class="px-4 py-5 bg-white sm:p-6 shadow sm:rounded-tl-md sm:rounded-tr-md">
+            <div class="grid grid-cols-6 gap-6">
+                <!-- Profile Photo -->
+    <div x-data="{photoName: null, photoPreview: null}" class="col-span-6 sm:col-span-4">
+        <!-- Profile Photo File Input -->
+        <input type="file" class="hidden" wire:model="photo" x-ref="photo" x-on:change="
+                            photoName = $refs.photo.files[0].name;
+                            const reader = new FileReader();
+                            reader.onload = (e) => {
+                                photoPreview = e.target.result;
+                            };
+                            reader.readAsDataURL($refs.photo.files[0]);
+                    ">
+
+        <label class="block font-medium text-sm text-gray-700" for="photo">
+Photo
+</label>
+
+        <!-- Current Profile Photo -->
+        <div class="mt-2" x-show="! photoPreview">
+           
+        </div>
+
+        <!-- New Profile Photo Preview -->
+        <div class="mt-2" x-show="photoPreview" style="display: none;">
+            <span class="block w-20 h-20 bg-center bg-no-repeat bg-cover rounded-full" x-bind:style="'background-image: url(\'' + photoPreview + '\');'">
+            </span>
+        </div>
+
+        <button type="button" class="inline-flex items-center px-4 py-2 bg-white border border-gray-300 rounded-md font-bold text-sm text-gray-700   shadow-sm hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:ring focus:ring-blue-200 active:text-gray-800 active:bg-gray-50 disabled:opacity-25 transition mt-2 mr-2" x-on:click.prevent="$refs.photo.click()">
+Select A New Photo
+</button>
+
+                        <button type="button" class="inline-flex items-center px-4 py-2 bg-white border border-gray-300 rounded-md font-bold text-sm text-gray-700   shadow-sm hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:ring focus:ring-blue-200 active:text-gray-800 active:bg-gray-50 disabled:opacity-25 transition mt-2" wire:click="deleteProfilePhoto">
+Remove Photo
+</button>
+        
+                </div>
+            </div>
+        </div>
+
+                        <div class="flex items-center justify-end px-4 py-3 bg-gray-50 text-right sm:px-6 shadow sm:rounded-bl-md sm:rounded-br-md">
+                <div x-data="{ shown: false, timeout: null }" x-init="window.livewire.find('UZg425soykKfsMaEsVeB').on('saved', () => { clearTimeout(timeout); shown = true; timeout = setTimeout(() => { shown = false }, 2000);  })" x-show.transition.out.opacity.duration.1500ms="shown" x-transition:leave.opacity.duration.1500ms="" style="display: none;" class="text-sm text-gray-600 mr-3">
+Saved.
+</div>
+
+    <button type="submit" class="inline-flex items-center px-4 py-2 font-bold bg-orange-500 border border-transparent rounded-md text-sm text-white   hover:bg-orange-400 active:bg-orange-400 focus:outline-none focus:border-orange-400 focus:ring focus:ring-orange-300 disabled:opacity-25 transition" wire:loading.attr="disabled" wire:target="photo">
+Save
+</button>
+            </div>
+                </form>
+</div>
+</div>

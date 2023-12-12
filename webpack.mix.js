@@ -1,4 +1,11 @@
 const mix = require('laravel-mix');
 const tailwindcss = require('tailwindcss');
 
-mix.setPublicPath('dist').postCss('resources/css/tailwind.css', '', [tailwindcss('tailwind.config.js')]);
+mix
+.postCss(
+    'resources/css/tailwind.css', 
+    'dist/tailwind-supplement.css', 
+    [
+        tailwindcss('tailwind.config.js')
+    ]
+);
