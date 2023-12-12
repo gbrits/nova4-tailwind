@@ -46,6 +46,7 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: { sans: ['Inter Tight', ...defaultTheme.fontFamily.sans] },
       screens: {
         ...defaultTheme.screens,
       },
